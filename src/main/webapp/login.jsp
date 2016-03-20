@@ -39,7 +39,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">HOME</a></li>
+                        <li class="active"><a href="index.jsp">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -61,20 +61,33 @@
         <div class="container">
             <div class="row centered">
 
-                <h3> Eu sou : </h3> <select>
-                    <option value="Professor">Professor</option>
-                    <option value="AssistenteDeRecursos">Assistente de Recursos</option>
-                    <option value="GerenteDeRecursos">GerenteDeRecursos</option>
-                </select>  
-                <form>
-                    Login:<br>
-                    <input type="text" name="login"><br>
-                    Senha:<br>
-                    <input type="password" name="senha">
-                </form> 
+                <form action = authenticator.jsp method="post">
 
-                <br><br>
-                <a href="login.jsp" class="btn btn-info" role="button">Login</a>	
+                    <h3> Eu sou :   </h3>                
+
+                    <select name = "select">
+                        <option value="Professor">Professor</option>
+                        <option value="AssistenteDeRecursos">Assistente de Recursos</option>
+                        <option value="GerenteDeRecursos">GerenteDeRecursos</option>
+                    </select>  
+
+                    <br> <br>
+
+                    Login 
+                    <input type="text" name="login">
+
+                    <br> <br>
+
+                    Senha
+                    <input type="password" name="senha">
+
+                    <br> <br>
+
+                    <input type="submit" value ="Login" class ="btn btn-info" >
+
+
+                </form>
+
                 <br><br>
 
             </div>

@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,7 +40,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">HOME</a></li>
+            <li class="active"><a href="index.jsp">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -50,7 +51,7 @@
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
-				<h1>Gerenciador de Salas</h1>
+				<h1>Master Sala</h1>
 				<h2>UFF</h2>
 				</div>
 			</div><!-- row -->
