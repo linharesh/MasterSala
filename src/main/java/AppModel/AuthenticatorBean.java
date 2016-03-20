@@ -1,13 +1,18 @@
 package AppModel;
 
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author HenriqueLinhares
@@ -25,7 +30,13 @@ public class AuthenticatorBean {
         }
 
         if (tipoDeUsuario.equalsIgnoreCase("GerenteDeRecursos")) {
-            return autenticaGerenteDeRecursos(login, senha);
+            try {
+                return autenticaGerenteDeRecursos(login, senha);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(AuthenticatorBean.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(AuthenticatorBean.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         return false;
@@ -48,11 +59,29 @@ public class AuthenticatorBean {
         }
     }
 
-    private static boolean autenticaGerenteDeRecursos(String login, String senha) {
-        if (login.equals("gerentederecursos") && senha.equals("gerentederecursos")) {
-            return true;
-        } else {
-            return false;
+    private static boolean autenticaGerenteDeRecursos(String login, String senha) throws ClassNotFoundException, SQLException {
+
+        Connection conn = null;
+
+        try {
+
+            String url = "jdbc:mysql://slq5.freemysqlhosting.net:3306/sql5111604";
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(url, "sql5111604", "HHVMrYrI6A");
+            System.out.println("Database connection established");
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Database connection terminated");
+                } catch (Exception e) {
+                    /* ignore close errors */ }
+            }
         }
+        return false ;
     }
+
 }

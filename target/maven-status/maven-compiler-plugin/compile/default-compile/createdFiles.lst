@@ -1,4 +1,4 @@
-DefaultPackage/AuthenticatorBean.class
-DefaultPackage/AssistenteDeRecursos.class
-DefaultPackage/GerenteDeRecursos.class
-DefaultPackage/Professor.class
+AppModel/AssistenteDeRecursos.class
+AppModel/AuthenticatorBean.class
+AppModel/GerenteDeRecursos.class
+AppModel/Professor.class

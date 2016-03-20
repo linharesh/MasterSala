@@ -1,4 +1,4 @@
-/Users/HenriqueLinhares/NetBeansProjects/MasterSala/src/main/java/com/mycompany/mastersala/AppModel/AuthenticatorBean.java
-/Users/HenriqueLinhares/NetBeansProjects/MasterSala/src/main/java/com/mycompany/mastersala/AppModel/GerenteDeRecursos.java
-/Users/HenriqueLinhares/NetBeansProjects/MasterSala/src/main/java/com/mycompany/mastersala/AppModel/Professor.java
-/Users/HenriqueLinhares/NetBeansProjects/MasterSala/src/main/java/com/mycompany/mastersala/AppModel/AssistenteDeRecursos.java
+/Users/HenriqueLinhares/NetBeansProjects/MasterCopy/src/main/java/AppModel/AuthenticatorBean.java
+/Users/HenriqueLinhares/NetBeansProjects/MasterCopy/src/main/java/AppModel/Professor.java
+/Users/HenriqueLinhares/NetBeansProjects/MasterCopy/src/main/java/AppModel/AssistenteDeRecursos.java
+/Users/HenriqueLinhares/NetBeansProjects/MasterCopy/src/main/java/AppModel/GerenteDeRecursos.java
