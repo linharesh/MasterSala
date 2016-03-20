@@ -1,12 +1,7 @@
-<%-- 
-    Document   : authenticator
-    Created on : 20/03/2016, 15:07:40
-    Author     : HenriqueLinhares
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@page import="" %>
+<%@page import="DefaultPackage.*"%>
 
 <!DOCTYPE html>
 <html>
