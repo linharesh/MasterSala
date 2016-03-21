@@ -1,5 +1,8 @@
 package AppModel;
 
+import static AppModel.DatabaseConnection.DATABASE_PASSWORD;
+import static AppModel.DatabaseConnection.DATABASE_URL;
+import static AppModel.DatabaseConnection.DATABASE_USERNAME;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,11 +11,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author HenriqueLinhares
@@ -61,28 +59,24 @@ public class AuthenticatorBean {
 
     private static boolean autenticaGerenteDeRecursos(String login, String senha) throws ClassNotFoundException, SQLException {
 
+        String query = "select * from GerenteDeRecursos where login = '" + login + "' AND senha = '" + senha + "' ;";
         Connection conn = null;
 
         try {
-
-            String url = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5111604";
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(url, "sql5111604", "HHVMrYrI6A");
+            conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
             System.out.println("Database connection established");
 
             Statement stmt = conn.createStatement();
-            String query = "select * from GerenteDeRecursos where login = '" + login + "' AND senha = '"+ senha + "' ;" ;
             ResultSet rs = stmt.executeQuery(query);
-            
-            if (rs.next()){
+            if (rs.next()) {
                 return true;
             } else {
                 return false;
             }
-
+            
         } catch (Exception e) {
             e.printStackTrace();
-
         } finally {
             if (conn != null) {
                 try {
@@ -92,7 +86,7 @@ public class AuthenticatorBean {
                     /* ignore close errors */ }
             }
         }
-        return false;
+        return false ;
     }
-
 }
+

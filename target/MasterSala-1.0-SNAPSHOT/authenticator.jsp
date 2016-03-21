@@ -11,16 +11,17 @@
     </head>
     <body>
         <%
-        String tipoDeUsuario = (request.getParameter("select"));
-        String login = (request.getParameter("login"));
-        String senha = (request.getParameter("senha"));
-        
-        
-        out.println(tipoDeUsuario);
-        out.println(login);
-        out.println(senha);
-        
-        out.print(AuthenticatorBean.autenticar(tipoDeUsuario,login ,senha));
+            out.println("<h1>Autenticando..</h1>");
+            String tipoDeUsuario = (request.getParameter("select"));
+            String login = (request.getParameter("login"));
+            String senha = (request.getParameter("senha"));
+            if (AuthenticatorBean.autenticar(tipoDeUsuario, login, senha)){
+                if (tipoDeUsuario.equalsIgnoreCase("GerenteDeRecursos")){
+                    response.sendRedirect("gerenteDeRecursoLogado.jsp");
+                }
+            } else {
+                out.println("<h1>Falha na autenticação !</h1>");
+            }
         %>
     </body>
 </html>
