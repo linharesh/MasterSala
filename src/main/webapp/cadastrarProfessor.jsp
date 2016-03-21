@@ -1,3 +1,4 @@
+<%@page import="AppModel.ProfessorCreator"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,12 @@
                 String login = (request.getParameter("login"));
                 String senha = (request.getParameter("senha"));
                 
-                
+                if (ProfessorCreator.canCreateProfessor(login)){
+                    ProfessorCreator.createProfessor(nome, login, senha);
+                    out.println("Professor criado com sucesso!");
+                } else {
+                out.println("Não foi possivel criar este cadastro.");
+                }
                 
                 
                 
