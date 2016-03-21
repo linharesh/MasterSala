@@ -65,10 +65,21 @@ public class AuthenticatorBean {
 
         try {
 
-            String url = "jdbc:mysql://slq5.freemysqlhosting.net:3306/sql5111604";
+            String url = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5111604";
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, "sql5111604", "HHVMrYrI6A");
             System.out.println("Database connection established");
+
+            Statement stmt = conn.createStatement();
+            String query = "select * from GerenteDeRecursos where login = '" + login + "' AND senha = '"+ senha + "' ;" ;
+            ResultSet rs = stmt.executeQuery(query);
+            
+            if (rs.next()){
+                return true;
+            } else {
+                return false;
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
 
@@ -81,7 +92,7 @@ public class AuthenticatorBean {
                     /* ignore close errors */ }
             }
         }
-        return false ;
+        return false;
     }
 
 }
