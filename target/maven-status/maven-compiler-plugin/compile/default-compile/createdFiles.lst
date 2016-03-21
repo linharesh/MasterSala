@@ -1,6 +1,6 @@
+AppModel/UserCreator.class
 AppModel/AssistenteDeRecursos.class
 AppModel/DatabaseConnection.class
 AppModel/AuthenticatorBean.class
 AppModel/GerenteDeRecursos.class
-AppModel/ProfessorCreator.class
 AppModel/Professor.class

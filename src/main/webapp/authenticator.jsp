@@ -15,10 +15,20 @@
             String tipoDeUsuario = (request.getParameter("select"));
             String login = (request.getParameter("login"));
             String senha = (request.getParameter("senha"));
-            if (AuthenticatorBean.autenticar(tipoDeUsuario, login, senha)){
-                if (tipoDeUsuario.equalsIgnoreCase("GerenteDeRecursos")){
+            if (AuthenticatorBean.autenticar(tipoDeUsuario, login, senha)) {
+                
+                if (tipoDeUsuario.equalsIgnoreCase("GerenteDeRecursos")) {
                     response.sendRedirect("gerenteDeRecursoLogado.jsp");
                 }
+
+                if (tipoDeUsuario.equalsIgnoreCase("Professor")) {
+                    response.sendRedirect("professorLogado.jsp");
+                }
+
+                if (tipoDeUsuario.equalsIgnoreCase("AssistenteDeRecursos")) {
+                    response.sendRedirect("assistenteDeRecursosLogado.jsp");
+                }
+
             } else {
                 out.println("<h1>Falha na autenticação !</h1>");
             }

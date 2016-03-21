@@ -19,47 +19,7 @@ public class AuthenticatorBean {
 
     public static boolean autenticar(String tipoDeUsuario, String login, String senha) {
 
-        if (tipoDeUsuario.equalsIgnoreCase("Professor")) {
-            return autenticaProfessor(login, senha);
-        }
-
-        if (tipoDeUsuario.equalsIgnoreCase("AssistenteDeRecursos")) {
-            return autenticaAssistenteDeRecursos(login, senha);
-        }
-
-        if (tipoDeUsuario.equalsIgnoreCase("GerenteDeRecursos")) {
-            try {
-                return autenticaGerenteDeRecursos(login, senha);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AuthenticatorBean.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(AuthenticatorBean.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-        return false;
-
-    }
-
-    private static boolean autenticaProfessor(String login, String senha) {
-        if (login.equals("professor") && senha.equals("professor")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private static boolean autenticaAssistenteDeRecursos(String login, String senha) {
-        if (login.equals("assistentederecursos") && senha.equals("assistentederecursos")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private static boolean autenticaGerenteDeRecursos(String login, String senha) throws ClassNotFoundException, SQLException {
-
-        String query = "select * from GerenteDeRecursos where login = '" + login + "' AND senha = '" + senha + "' ;";
+        String query = "select * from "+ tipoDeUsuario +" where login = '" + login + "' AND senha = '" + senha + "' ;";
         Connection conn = null;
 
         try {
@@ -88,5 +48,5 @@ public class AuthenticatorBean {
         }
         return false ;
     }
-}
 
+}

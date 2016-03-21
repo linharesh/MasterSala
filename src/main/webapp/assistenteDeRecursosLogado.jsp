@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Gerente de Recursos</h1>
+                        <h1>Assistente de Recursos</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
@@ -62,11 +62,11 @@
         <div class="container">
             <div class="row centered">
                 <br><br>
-                <a href="formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Cadastrar Novo Usuário do Sistema</a>	
+                <a href="formCadastrarProfessor.jsp" class="btn btn-info" role="button">Cadastrar Novo Professor</a>	
                 <br><br>
-                <a href="#" class="btn btn-info" role="button">Visualizar Solicitações de Reserva</a>
+                <a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Cadastrar Novo Assistente de Recursos</a>
                 <br><br>
-                <a href="#" class="btn btn-info" role="button">Botão 3</a>
+                <a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Visualizar Solicitações de Reserva</a>
                 <br><br>
             </div>
         </div><!-- container -->

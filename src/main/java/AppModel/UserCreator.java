@@ -18,11 +18,11 @@ import java.util.Random;
  *
  * @author HenriqueLinhares
  */
-public class ProfessorCreator {
+public class UserCreator {
 
-    public static boolean canCreateProfessor(String login) {
+    public static boolean podeCriarUsuario(String login, String tipoDeUsuario) {
 
-        String query = "select * from Professor where login = '" + login + "'";
+        String query = "select * from " + tipoDeUsuario + " where login = '" + login + "'";
         Connection conn = null;
 
         try {
@@ -53,12 +53,12 @@ public class ProfessorCreator {
 
     }
 
-    public static void createProfessor(String nome, String login, String senha) {
+    public static void criarUsuario(String nome, String login, String senha, String tipoDeUsuario) {
         
-        int ID = idGenerator();
+        int ID = idGenerator(tipoDeUsuario);
 
-        String query = "INSERT INTO `sql5111604`.`Professor`"
-                + "(`idProfessor`,"
+        String query = "INSERT INTO `sql5111604`.`"+tipoDeUsuario+"`"
+                + "(`id"+tipoDeUsuario+"`,"
                 + "`login`,"
                 + "`senha`,"
                 + "`nome`)"
@@ -90,7 +90,7 @@ public class ProfessorCreator {
         }
     }
 
-    private static int idGenerator() {
+    private static int idGenerator(String tipoDeUsuario) {
         boolean continua = true;
         Connection conn = null;
         int random = 0;
@@ -99,7 +99,7 @@ public class ProfessorCreator {
             do {
                 Random randomGenerator = new Random();
                 random = randomGenerator.nextInt(Integer.MAX_VALUE - 1);
-                String query = "select * from Professor where idProfessor = " + random;
+                String query = "select * from "+tipoDeUsuario+" where idProfessor = " + random;
 
                 Class.forName("com.mysql.jdbc.Driver");
                 conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);

@@ -1,3 +1,4 @@
+<%@page import="AppModel.UserCreator"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +52,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Gerente de Recursos</h1>
+                        <h1>Cadastrar Novo Professor</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
@@ -61,13 +62,22 @@
 
         <div class="container">
             <div class="row centered">
-                <br><br>
-                <a href="formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Cadastrar Novo Usuário do Sistema</a>	
-                <br><br>
-                <a href="#" class="btn btn-info" role="button">Visualizar Solicitações de Reserva</a>
-                <br><br>
-                <a href="#" class="btn btn-info" role="button">Botão 3</a>
-                <br><br>
+                <%
+                String tipoDeUsuario = (request.getParameter("select"));
+                String nome = (request.getParameter("nome"));
+                String login = (request.getParameter("login"));
+                String senha = (request.getParameter("senha"));
+                
+                if (UserCreator.podeCriarUsuario(login, tipoDeUsuario)){
+                    UserCreator.criarUsuario(nome, login, senha, tipoDeUsuario);
+                    out.println("<h1>Usuário Criado com Sucesso</h1>");
+                } else {
+                    out.println("<h1>Falha ao criar usuário</h1>");
+                }
+                
+
+                %>
+
             </div>
         </div><!-- container -->
 

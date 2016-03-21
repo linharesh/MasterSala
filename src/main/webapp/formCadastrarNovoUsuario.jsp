@@ -61,11 +61,19 @@
 
         <div class="container">
             <div class="row centered">
-                <form action = cadastrarProfessor.jsp method="post">
+                <form action = cadastraUsuario.jsp method="post">
+
+                    <h3> Este usuário é : </h3>                
+
+                    <select name = "select">
+                        <option value="Professor">Professor</option>
+                        <option value="AssistenteDeRecursos">AssistenteDeRecursos</option>
+                        <option value="GerenteDeRecursos">GerenteDeRecursos</option>
+                    </select>  
 
                     <br> <br>
 
-                    Nome do Professor : 
+                    Nome : 
                     <input type="text" name="nome">
 
                     <br> <br>
@@ -79,7 +87,7 @@
                     <input type="password" name="senha">
 
                     <br> <br>
-                    
+
                     <input type="submit" value ="Cadastrar" class ="btn btn-info" >
 
 

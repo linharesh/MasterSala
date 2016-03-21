@@ -1,4 +1,3 @@
-<%@page import="AppModel.ProfessorCreator"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +51,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Cadastrar Novo Professor</h1>
+                        <h1>Professor</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
@@ -62,22 +61,13 @@
 
         <div class="container">
             <div class="row centered">
-                <%
-                String nome = (request.getParameter("nome"));
-                String login = (request.getParameter("login"));
-                String senha = (request.getParameter("senha"));
-                
-                if (ProfessorCreator.canCreateProfessor(login)){
-                    ProfessorCreator.createProfessor(nome, login, senha);
-                    out.println("Professor criado com sucesso!");
-                } else {
-                out.println("Não foi possivel criar este cadastro.");
-                }
-                
-                
-                
-                %>
-
+                <br><br>
+                <a href="formCadastrarProfessor.jsp" class="btn btn-info" role="button">Cadastrar Novo Professor</a>	
+                <br><br>
+                <a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Cadastrar Novo Assistente de Recursos</a>
+                <br><br>
+                <a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Visualizar Solicitações de Reserva</a>
+                <br><br>
             </div>
         </div><!-- container -->
 
