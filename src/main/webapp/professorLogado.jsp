@@ -40,8 +40,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.jsp">HOME</a></li>
+                        <li class="active"><a href="#">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="logout.jsp">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -58,15 +59,17 @@
             </div><!-- container -->
         </div><!-- headerwrap -->
 
+        <%
+        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("Professor")){
+        out.println("<script>document.location.href='index.jsp';</script>");
+        }
+        %>
+        
 
         <div class="container">
             <div class="row centered">
                 <br><br>
-                <a href="formCadastrarProfessor.jsp" class="btn btn-info" role="button">Cadastrar Novo Professor</a>	
-                <br><br>
-                <a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Cadastrar Novo Assistente de Recursos</a>
-                <br><br>
-                <a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Visualizar Solicitações de Reserva</a>
+                <a href="formSolicitarReservaSala.jsp" class="btn btn-info" role="button">Solicitar Reserva de Sala</a>	
                 <br><br>
             </div>
         </div><!-- container -->

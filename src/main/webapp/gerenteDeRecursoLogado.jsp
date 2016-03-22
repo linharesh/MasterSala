@@ -42,6 +42,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="index.jsp">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="logout.jsp">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -58,6 +59,12 @@
             </div><!-- container -->
         </div><!-- headerwrap -->
 
+        <%
+        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("GerenteDeRecursos")){
+        out.println("<script>document.location.href='index.jsp';</script>");
+        }
+        %>
+        
 
         <div class="container">
             <div class="row centered">
@@ -65,8 +72,6 @@
                 <a href="formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Cadastrar Novo Usuário do Sistema</a>	
                 <br><br>
                 <a href="#" class="btn btn-info" role="button">Visualizar Solicitações de Reserva</a>
-                <br><br>
-                <a href="#" class="btn btn-info" role="button">Botão 3</a>
                 <br><br>
             </div>
         </div><!-- container -->

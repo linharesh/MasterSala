@@ -67,7 +67,7 @@
 
                     <select name = "select">
                         <option value="Professor">Professor</option>
-                        <option value="AssistenteDeRecursos">Assistente de Recursos</option>
+                        <option value="AssistenteDeRecursos">AssistenteDeRecursos</option>
                         <option value="GerenteDeRecursos">GerenteDeRecursos</option>
                     </select>  
 

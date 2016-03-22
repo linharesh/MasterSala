@@ -7,30 +7,35 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Authenticator</title>
     </head>
     <body>
+        <h1>Authenticator</h1>
         <%
-            out.println("<h1>Autenticando..</h1>");
             String tipoDeUsuario = (request.getParameter("select"));
             String login = (request.getParameter("login"));
             String senha = (request.getParameter("senha"));
             if (AuthenticatorBean.autenticar(tipoDeUsuario, login, senha)) {
                 
+                session.setAttribute("loginUsuario", login);
+                session.setAttribute("senhaUsuario", senha);
+                session.setAttribute("tipoDeUsuario", tipoDeUsuario);
+                
                 if (tipoDeUsuario.equalsIgnoreCase("GerenteDeRecursos")) {
-                    response.sendRedirect("gerenteDeRecursoLogado.jsp");
+                    
+                    out.println("<script>document.location.href='gerenteDeRecursoLogado.jsp';</script>");
                 }
 
                 if (tipoDeUsuario.equalsIgnoreCase("Professor")) {
-                    response.sendRedirect("professorLogado.jsp");
+                    out.println("<script>document.location.href='professorLogado.jsp';</script>");
                 }
 
                 if (tipoDeUsuario.equalsIgnoreCase("AssistenteDeRecursos")) {
-                    response.sendRedirect("assistenteDeRecursosLogado.jsp");
+                    out.println("<script>document.location.href='assistenteDeRecursosLogado.jsp';</script>");
                 }
 
             } else {
-                out.println("<h1>Falha na autenticação !</h1>");
+               out.println("Login ou senha inválidos. <a href='java script:back()'>Voltar</a>");
             }
         %>
     </body>

@@ -40,7 +40,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">HOME</a></li>
+                        <li class="active"><a href="professorLogado.jsp">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
                         <li><a href="logout.jsp">LOGOUT</a></li>
                     </ul>
@@ -52,7 +52,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Assistente De Recursos</h1>
+                        <h1>Professor</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
@@ -60,19 +60,29 @@
         </div><!-- headerwrap -->
 
         <%
-        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("AssistenteDeRecursos")){
-        out.println("<script>document.location.href='index.jsp';</script>");
-        }
+            if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("Professor")) {
+                out.println("<script>document.location.href='index.jsp';</script>");
+            }
         %>
-        
 
-        <div class="container">
-            <div class="row centered">
-                <br><br>
-                
-                <br><br>
-            </div>
-        </div><!-- container -->
+        <form action = solicitarReservaSala.jsp method="post">
+
+            Sala 
+            <input type="text" name="login">
+
+            <br> <br>
+
+            Data formato: DD/MM/AAAA
+            <input type="text" name="senha">
+
+            <br> <br>
+
+            <input type="submit" value ="Solicitar" class ="btn btn-info" >
+
+
+        </form>
+
+
 
 
         <!-- Bootstrap core JavaScript

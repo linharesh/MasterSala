@@ -52,7 +52,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Assistente De Recursos</h1>
+                        <h1>Professor</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
@@ -60,19 +60,17 @@
         </div><!-- headerwrap -->
 
         <%
-        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("AssistenteDeRecursos")){
+        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("Professor")){
         out.println("<script>document.location.href='index.jsp';</script>");
         }
+        
+        
+        
+        
+        
         %>
         
-
-        <div class="container">
-            <div class="row centered">
-                <br><br>
-                
-                <br><br>
-            </div>
-        </div><!-- container -->
+    
 
 
         <!-- Bootstrap core JavaScript
