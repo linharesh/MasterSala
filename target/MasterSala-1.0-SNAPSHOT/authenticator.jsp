@@ -27,11 +27,11 @@
                 }
 
                 if (tipoDeUsuario.equalsIgnoreCase("Professor")) {
-                    out.println("<script>document.location.href='professorLogado.jsp';</script>");
+                    out.println("<script>document.location.href='Professor/professorLogado.jsp';</script>");
                 }
 
                 if (tipoDeUsuario.equalsIgnoreCase("AssistenteDeRecursos")) {
-                    out.println("<script>document.location.href='assistenteDeRecursosLogado.jsp';</script>");
+                    out.println("<script>document.location.href='AssistenteDeRecursos/assistenteDeRecursosLogado.jsp';</script>");
                 }
 
             } else {
