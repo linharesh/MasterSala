@@ -61,7 +61,7 @@
         <div class="container">
             <div class="row centered">
 
-                <form action = authenticator.jsp method="post">
+                <form action = Autenticador method="post">
 
                     <h3> Eu sou :   </h3>                
 

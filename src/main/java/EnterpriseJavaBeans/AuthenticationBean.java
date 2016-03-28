@@ -1,4 +1,4 @@
-package AppModel;
+package EnterpriseJavaBeans;
 
 import static AppModel.DatabaseConnection.DATABASE_PASSWORD;
 import static AppModel.DatabaseConnection.DATABASE_URL;
@@ -6,20 +6,18 @@ import static AppModel.DatabaseConnection.DATABASE_USERNAME;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author HenriqueLinhares
  */
-public class AuthenticatorBean {
+@Stateless
+public class AuthenticationBean {
 
-    public static boolean autenticar(String tipoDeUsuario, String login, String senha) {
-
-        String query = "select * from "+ tipoDeUsuario +" where login = '" + login + "' AND senha = '" + senha + "' ;";
+    public boolean autentica(String tipoDeUsuario, String login, String senha) {
+        String query = "select * from " + tipoDeUsuario + " where login = '" + login + "' AND senha = '" + senha + "' ;";
         Connection conn = null;
 
         try {
@@ -34,7 +32,7 @@ public class AuthenticatorBean {
             } else {
                 return false;
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -46,7 +44,7 @@ public class AuthenticatorBean {
                     /* ignore close errors */ }
             }
         }
-        return false ;
+        return false;
     }
 
 }
