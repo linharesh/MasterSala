@@ -1,9 +1,6 @@
 Servlets/Autenticador.class
-AppModel/DatabaseConnection.class
-AppModel/GerenteDeRecursos.class
-EnterpriseJavaBeans/AuthenticationBean.class
-AppModel/Professor.class
-EnterpriseJavaBeans/LoginSessionBean.class
-AppModel/SalasBean.class
 AppModel/UserCreator.class
-AppModel/AssistenteDeRecursos.class
+EnterpriseJavaBeans/UsuarioBean.class
+AppModel/DatabaseConnection.class
+EnterpriseJavaBeans/AuthenticationBean.class
+Servlets/CadastrarNovoUsuario.class

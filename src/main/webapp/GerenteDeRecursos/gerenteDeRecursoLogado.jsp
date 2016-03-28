@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,8 +40,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.jsp">HOME</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
+                        <li class="active"><a href="#">HOME</a></li>
+                        <li><a href="../MasterSala/logout.jsp">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -50,49 +51,29 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Login</h1>
-
+                        <h1>Gerente de Recursos</h1>
+                        <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
             </div><!-- container -->
         </div><!-- headerwrap -->
 
+        <%
+        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("GerenteDeRecursos")){
+        out.println("<script>document.location.href='index.jsp';</script>");
+        }
+        %>
+        
 
         <div class="container">
             <div class="row centered">
-
-                <form action = Autenticador method="post">
-
-                    <h3> Eu sou :   </h3>                
-
-                    <select name = "select">
-                        <option value="Professor">Professor</option>
-                        <option value="AssistenteDeRecursos">AssistenteDeRecursos</option>
-                        <option value="GerenteDeRecursos">GerenteDeRecursos</option>
-                    </select>  
-
-                    <br> <br>
-
-                    Login 
-                    <input type="text" name="login">
-
-                    <br> <br>
-
-                    Senha
-                    <input type="password" name="senha">
-
-                    <br> <br>
-
-                    <input type="submit" value ="Login" class ="btn btn-info" >
-
-
-                </form>
-
                 <br><br>
-
+                <a href="/MasterSala/GerenteDeRecursos/formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Cadastrar Novo Usuário do Sistema</a>	
+                <br><br>
+                <a href="#" class="btn btn-info" role="button">Visualizar Solicitações de Reserva</a>
+                <br><br>
             </div>
         </div><!-- container -->
-
 
 
         <!-- Bootstrap core JavaScript

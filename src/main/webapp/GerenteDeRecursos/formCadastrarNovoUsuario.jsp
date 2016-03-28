@@ -12,11 +12,11 @@
         <title>Gerenciador de Salas</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="assets/css/bootstrap.css" rel="stylesheet">
-        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../assets/css/bootstrap.css" rel="stylesheet">
+        <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="assets/css/main.css" rel="stylesheet">
+        <link href="../assets/css/main.css" rel="stylesheet">
 
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Cadastrar Novo Professor</h1>
+                        <h1>Cadastrar Novo Usuário</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
@@ -61,7 +61,7 @@
 
         <div class="container">
             <div class="row centered">
-                <form action = cadastraUsuario.jsp method="post">
+                <form action = ../CadastrarNovoUsuario method="post">
 
                     <h3> Este usuário é : </h3>                
 

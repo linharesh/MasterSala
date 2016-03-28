@@ -1,4 +1,3 @@
-<%@page import="AppModel.UserCreator"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +40,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.jsp">HOME</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
+                        <li class="active"><a href="#">HOME</a></li>
+                        <li><a href="../MasterSala/logout.jsp">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -52,32 +51,27 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Cadastrar Novo Professor</h1>
+                        <h1>Erro ao Cadastrar Usuário</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
             </div><!-- container -->
         </div><!-- headerwrap -->
 
+        <%
+        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("GerenteDeRecursos")){
+        out.println("<script>document.location.href='index.jsp';</script>");
+        }
+        %>
+        
 
         <div class="container">
             <div class="row centered">
-                <%
-                String tipoDeUsuario = (request.getParameter("select"));
-                String nome = (request.getParameter("nome"));
-                String login = (request.getParameter("login"));
-                String senha = (request.getParameter("senha"));
-                
-                if (UserCreator.podeCriarUsuario(login, tipoDeUsuario)){
-                    UserCreator.criarUsuario(nome, login, senha, tipoDeUsuario);
-                    out.println("<h1>Usuário Criado com Sucesso</h1>");
-                } else {
-                    out.println("<h1>Falha ao criar usuário</h1>");
-                }
-                
-
-                %>
-
+                <br><br>
+                <a href="/MasterSala/GerenteDeRecursos/formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Tentar Novamente</a>	
+                <br><br>
+                <a href="/MasterSala/GerenteDeRecursos/gerenteDeRecursosLogado.jsp" class="btn btn-info" role="button">Voltar ao Menu de Gerente de Recursos</a>
+                <br><br>
             </div>
         </div><!-- container -->
 

@@ -5,7 +5,7 @@
  */
 package Servlets;
 
-import EnterpriseJavaBeans.AuthenticationBean;
+import EnterpriseJavaBeans.UsuarioBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -15,17 +15,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author HenriqueLinhares
  */
-@WebServlet(name = "Autenticador", urlPatterns = {"/Autenticador"})
-public class Autenticador extends HttpServlet {
+@WebServlet(name = "CadastrarNovoUsuario", urlPatterns = {"/CadastrarNovoUsuario"})
+public class CadastrarNovoUsuario extends HttpServlet {
 
     @EJB
-    AuthenticationBean authBean;
+    UsuarioBean usuarioBean;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,30 +39,19 @@ public class Autenticador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
             String tipoDeUsuario = (request.getParameter("select"));
+            String nome = (request.getParameter("nome"));
             String login = (request.getParameter("login"));
             String senha = (request.getParameter("senha"));
+
             RequestDispatcher requestDispatcher = null;
-            if (authBean.autentica(tipoDeUsuario, login, senha)) {
-
-                request.getSession().setAttribute("loginUsuario", login);
-                request.getSession().setAttribute("senhaUsuario", senha);
-                request.getSession().setAttribute("tipoDeUsuario", tipoDeUsuario);
-
-                if (tipoDeUsuario.equalsIgnoreCase("GerenteDeRecursos")) {
-                    requestDispatcher = request.getRequestDispatcher("/GerenteDeRecursos/gerenteDeRecursoLogado.jsp");
-                }
-
-                if (tipoDeUsuario.equalsIgnoreCase("Professor")) {
-                    requestDispatcher = request.getRequestDispatcher("Professor/professorLogado.jsp");
-                }
-
-                if (tipoDeUsuario.equalsIgnoreCase("AssistenteDeRecursos")) {
-                    requestDispatcher = request.getRequestDispatcher("/AssistenteDeRecursos/assistenteDeRecursosLogado.jsp");
-                }
-
+            
+            if (usuarioBean.podeCriarUsuario(login, tipoDeUsuario)) {
+                usuarioBean.criarUsuario(nome, login, senha, tipoDeUsuario);
+                requestDispatcher = request.getRequestDispatcher("/GerenteDeRecursos/usuarioCadastradoComSucesso.jsp");
             } else {
-                requestDispatcher = request.getRequestDispatcher("loginMalsucedido.jsp");
+                 requestDispatcher = request.getRequestDispatcher("/GerenteDeRecursos/falhaAoCadastrarUsuario.jsp");
             }
             requestDispatcher.forward(request, response);
 

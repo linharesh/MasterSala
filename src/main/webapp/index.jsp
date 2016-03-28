@@ -41,7 +41,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.jsp">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="about.jsp">ABOUT</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -62,7 +62,7 @@
 	<div class="container">
 		<div class="row centered">
 			<br><br>
-		<a href="login.jsp" class="btn btn-info" role="button">Login</a>	
+		<a href="formLogin.jsp" class="btn btn-info" role="button">Login</a>	
 			<br><br>
 		<a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Consultas Públicas</a>
 			<br><br>
