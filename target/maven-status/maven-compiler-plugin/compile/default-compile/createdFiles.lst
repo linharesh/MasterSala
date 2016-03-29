@@ -1,6 +1,8 @@
 Servlets/Autenticador.class
-AppModel/UserCreator.class
 EnterpriseJavaBeans/UsuarioBean.class
 AppModel/DatabaseConnection.class
+Servlets/Logout.class
 EnterpriseJavaBeans/AuthenticationBean.class
 Servlets/CadastrarNovoUsuario.class
+EnterpriseJavaBeans/SolicitacaoDeSalaBean.class
+Servlets/SolicitarReservaSala.class

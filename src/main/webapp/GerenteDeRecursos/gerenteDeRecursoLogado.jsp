@@ -1,4 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+ if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("GerenteDeRecursos")) {
+        out.println("<script>document.location.href='index.jsp';</script>");
+ }
+%>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,7 +49,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">HOME</a></li>
-                        <li><a href="../MasterSala/logout.jsp">LOGOUT</a></li>
+                         <li><a href="Logout">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -58,13 +66,7 @@
             </div><!-- container -->
         </div><!-- headerwrap -->
 
-        <%
-        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("GerenteDeRecursos")){
-        out.println("<script>document.location.href='index.jsp';</script>");
-        }
-        %>
         
-
         <div class="container">
             <div class="row centered">
                 <br><br>

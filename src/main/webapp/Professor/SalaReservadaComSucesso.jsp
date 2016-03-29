@@ -1,4 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("Professor")) {
+        out.println("<script>document.location.href='index.jsp';</script>");
+    }
+%>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,7 +48,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">HOME</a></li>
+                        <li class="active"><a href="professorLogado.jsp">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
                         <li><a href="logout.jsp">LOGOUT</a></li>
                     </ul>
@@ -52,26 +60,49 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Professor</h1>
+                        <h1>Sala Reservada com Sucesso</h1>
                         <h2>MasterSala - UFF</h2>
                     </div>
                 </div><!-- row -->
             </div><!-- container -->
         </div><!-- headerwrap -->
 
-        <%
-        if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("Professor")){
-        out.println("<script>document.location.href='index.jsp';</script>");
-        }
-        
-        
-        
-        
-        
-        %>
-        
-    
+       <div class="container">
+            <div class="row centered">
+                <form action = ../SolicitarReservaSala method="post">
 
+                    <br><br>
+
+                    Sala <br>
+                    <input type="text" name="sala">
+
+                    <br> <br>
+
+                    Data (formato: DD/MM/AAAA) <br>
+                    <input type="text" name="data">
+
+                    <br> <br>
+
+                    Horário de início (Formato HH:MM) <br>
+                    <input type="text" name="horario_inicio">
+
+                    <br> <br>
+
+                    Horário de fim (Formato HH:MM) <br>
+                    <input type="text" name="horario_fim">
+
+                    <br> <br>
+
+
+
+                    <input type="submit" value ="Solicitar" class ="btn btn-info" >
+
+
+                </form>
+            </div>
+        </div>
+
+        <br><br><br>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

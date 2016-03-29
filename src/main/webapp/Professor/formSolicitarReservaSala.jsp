@@ -1,4 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("Professor")) {
+        out.println("<script>document.location.href='index.jsp';</script>");
+    }
+%>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -59,31 +67,43 @@
             </div><!-- container -->
         </div><!-- headerwrap -->
 
-        <%
-            if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("Professor")) {
-                out.println("<script>document.location.href='index.jsp';</script>");
-            }
-        %>
 
-        <form action = solicitarReservaSala.jsp method="post">
+        <div class="container">
+            <div class="row centered">
+                <form action = ../SolicitarReservaSala method="post">
 
-            Sala 
-            <input type="text" name="login">
+                    <br><br>
 
-            <br> <br>
+                    Sala <br>
+                    <input type="text" name="sala">
 
-            Data formato: DD/MM/AAAA
-            <input type="text" name="senha">
+                    <br> <br>
 
-            <br> <br>
+                    Data (formato: DD/MM/AAAA) <br>
+                    <input type="text" name="data">
 
-            <input type="submit" value ="Solicitar" class ="btn btn-info" >
+                    <br> <br>
+
+                    Horário de início (Formato HH:MM) <br>
+                    <input type="text" name="horario_inicio">
+
+                    <br> <br>
+
+                    Horário de fim (Formato HH:MM) <br>
+                    <input type="text" name="horario_fim">
+
+                    <br> <br>
 
 
-        </form>
+
+                    <input type="submit" value ="Solicitar" class ="btn btn-info" >
 
 
+                </form>
+            </div>
+        </div>
 
+        <br><br><br>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

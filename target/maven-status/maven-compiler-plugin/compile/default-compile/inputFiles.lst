@@ -1,6 +1,8 @@
 /Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/EnterpriseJavaBeans/AuthenticationBean.java
+/Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/EnterpriseJavaBeans/SolicitacaoDeSalaBean.java
+/Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/Servlets/Logout.java
 /Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/EnterpriseJavaBeans/UsuarioBean.java
 /Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/Servlets/CadastrarNovoUsuario.java
 /Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/Servlets/Autenticador.java
-/Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/AppModel/UserCreator.java
 /Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/AppModel/DatabaseConnection.java
+/Users/HenriqueLinhares/Desktop/MasterSala/src/main/java/Servlets/SolicitarReservaSala.java

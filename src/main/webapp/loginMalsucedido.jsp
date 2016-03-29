@@ -62,7 +62,7 @@
 	<div class="container">
 		<div class="row centered">
 			<br><br>
-		<a href="login.jsp" class="btn btn-info" role="button">Tentar Novamente</a>	
+		<a href="formLogin.jsp" class="btn btn-info" role="button">Tentar Novamente</a>	
 			<br><br>
 	</div>
 	</div><!-- container -->
