@@ -70,9 +70,13 @@
         <div class="container">
             <div class="row centered">
                 <br><br>
-                <a href="/MasterSala/GerenteDeRecursos/formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Cadastrar Novo Usuário do Sistema</a>	
+                
+                <h3> Solicitacoes não autorizadas</h3>
                 <br><br>
-                <a href="#" class="btn btn-info" role="button">Gerenciar Solicitações de Reserva</a>
+                
+                
+                
+                
                 <br><br>
             </div>
         </div><!-- container -->

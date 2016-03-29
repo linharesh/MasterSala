@@ -21,6 +21,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class SolicitacaoDeSalaBean {
+    
+    
+    
 
     public int novaSolicitacaoDeSala(int idSala, String idProfessor, String horarioInicio, String horarioFim, String data) {
         int id = idGenerator();
