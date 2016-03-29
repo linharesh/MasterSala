@@ -49,8 +49,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="professorLogado.jsp">HOME</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
-                        <li><a href="logout.jsp">LOGOUT</a></li>
+                        <li><a href="../Logout">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

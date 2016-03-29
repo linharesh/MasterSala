@@ -41,7 +41,6 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.jsp">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

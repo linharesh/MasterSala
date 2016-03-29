@@ -48,7 +48,7 @@ public class SolicitarReservaSala extends HttpServlet {
 
             solicitacaoDeSalaBean.novaSolicitacaoDeSala(idSala, idProfessor, horarioInicio, horarioFim, data);
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/MasterSala/GerenteDeRecursos/gerenteDeRecursoLogado.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Professor/professorLogado.jsp");
 
             requestDispatcher.forward(request, response);
         }

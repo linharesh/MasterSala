@@ -41,7 +41,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">HOME</a></li>
-                        <li><a href="logout.jsp">LOGOUT</a></li>
+                        <li><a href="Logout">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row centered">
                 <br><br>
-                
+                    <h2>Em breve novas funcionalidades!</h2>
                 <br><br>
             </div>
         </div><!-- container -->
