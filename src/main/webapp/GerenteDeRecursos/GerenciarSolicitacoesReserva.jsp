@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="EnterpriseJavaBeans.SolicitacaoDeSalaBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
@@ -74,7 +76,13 @@
                 <h3> Solicitacoes não autorizadas</h3>
                 <br><br>
                 
+                <%
+                ArrayList reservas;
+                SolicitacaoDeSalaBean solicitacaoDeSalaBean = new SolicitacaoDeSalaBean();
+                reservas = solicitacaoDeSalaBean.listarReservasNaoAprovadas();
+                out.println("breakpoint");
                 
+                %>
                 
                 
                 <br><br>

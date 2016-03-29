@@ -6,3 +6,4 @@ EnterpriseJavaBeans/AuthenticationBean.class
 Servlets/CadastrarNovoUsuario.class
 EnterpriseJavaBeans/SolicitacaoDeSalaBean.class
 Servlets/SolicitarReservaSala.class
+AppModel/Reserva.class

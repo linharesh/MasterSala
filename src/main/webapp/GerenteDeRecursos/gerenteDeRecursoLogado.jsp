@@ -72,7 +72,7 @@
                 <br><br>
                 <a href="/MasterSala/GerenteDeRecursos/formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Cadastrar Novo Usuário do Sistema</a>	
                 <br><br>
-                <a href="#" class="btn btn-info" role="button">Gerenciar Solicitações de Reserva</a>
+                <a href="/MasterSala/GerenteDeRecursos/GerenciarSolicitacoesReserva.jsp" class="btn btn-info" role="button">Gerenciar Solicitações de Reserva</a>
                 <br><br>
             </div>
         </div><!-- container -->
