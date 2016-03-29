@@ -1,4 +1,5 @@
 Servlets/Autenticador.class
+Servlets/AutorizadorDeReserva.class
 EnterpriseJavaBeans/UsuarioBean.class
 AppModel/DatabaseConnection.class
 Servlets/Logout.class

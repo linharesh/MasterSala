@@ -20,12 +20,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author HenriqueLinhares
  */
-@WebServlet(name = "SolicitarReservaSala", urlPatterns = {"/SolicitarReservaSala"})
-public class SolicitarReservaSala extends HttpServlet {
+@WebServlet(name = "AutorizadorDeReserva", urlPatterns = {"/AutorizadorDeReserva"})
+public class AutorizadorDeReserva extends HttpServlet {
 
     @EJB
     SolicitacaoDeSalaBean solicitacaoDeSalaBean;
-
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,17 +39,11 @@ public class SolicitarReservaSala extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            int idSala = Integer.parseInt(request.getParameter("id_reserva"));
+            solicitacaoDeSalaBean.autorizarReserva(idSala);
 
-            int idSala = Integer.parseInt(request.getParameter("sala"));
-            String idProfessor = (String) request.getSession().getAttribute("loginUsuario");
-            String horarioInicio = request.getParameter("horario_inicio");
-            String horarioFim = request.getParameter("horario_fim");
-            String data = request.getParameter("data");
-
-            solicitacaoDeSalaBean.novaSolicitacaoDeSala(idSala, idProfessor, horarioInicio, horarioFim, data);
-
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/MasterSala/GerenteDeRecursos/gerenteDeRecursoLogado.jsp");
-
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/GerenteDeRecursos/gerenteDeRecursoLogado.jsp");
             requestDispatcher.forward(request, response);
         }
     }

@@ -64,7 +64,7 @@
 			<br><br>
 		<a href="formLogin.jsp" class="btn btn-info" role="button">Login</a>	
 			<br><br>
-		<a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Consultas Públicas</a>
+		<a href="ConsultasPublicas.jsp" class="btn btn-info" role="button">Visualizar Reservas Aprovadas</a>
 			<br><br>
 	</div>
 	</div><!-- container -->

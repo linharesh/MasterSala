@@ -29,24 +29,21 @@ public class SolicitacaoDeSalaBean {
 
         Connection conn = null;
         try {
-            
-            
-                String query = "select * from Reserva";
-                
-                Class.forName("com.mysql.jdbc.Driver");
-                conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
-                System.out.println("Database connection established");
 
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-                Reserva r;
-                while (rs.next()) {
-                    // public Reserva(int id, String professorID, String idSalas, String horarioInicial, String horarioFinal, boolean aprovada, String data) 
-                    r = new Reserva(Integer.parseInt(rs.getString(1)), rs.getString(7), rs.getString(2), rs.getString(3), rs.getString(4), rs.getBoolean(5), rs.getString(6));
-                    reservas.add(r);
-                }
+            String query = "select * from Reserva";
 
-            
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+            System.out.println("Database connection established");
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            Reserva r;
+            while (rs.next()) {
+                // public Reserva(int id, String professorID, String idSalas, String horarioInicial, String horarioFinal, boolean aprovada, String data) 
+                r = new Reserva(Integer.parseInt(rs.getString(1)), rs.getString(7), rs.getString(2), rs.getString(3), rs.getString(4), rs.getBoolean(5), rs.getString(6));
+                reservas.add(r);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,7 +56,6 @@ public class SolicitacaoDeSalaBean {
                     /* ignore close errors */ }
             }
         }
-        
 
         return reservas;
     }
@@ -129,6 +125,33 @@ public class SolicitacaoDeSalaBean {
             }
         }
         return random;
+    }
+
+    public void autorizarReserva(int idReserva) {
+
+        String query = "update Reserva set aprovada = TRUE where ID = "+idReserva;
+        Connection conn = null;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+            System.out.println("Database connection established");
+
+            Statement stmt = conn.createStatement();
+            stmt.execute(query);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Database connection terminated");
+                } catch (Exception e) {
+                    /* ignore close errors */ }
+            }
+        }
+
     }
 
 }

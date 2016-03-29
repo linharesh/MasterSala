@@ -28,6 +28,21 @@ private String data;
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        
+        String statusDeAprovacao;
+        if (this.aprovada){
+            statusDeAprovacao = "Aprovada";
+        } else {
+            statusDeAprovacao = "Nao Aprovada";
+        }
+        
+        return id+" | "+professorID+" | "+idSalas+" | "+data+" | "+horarioInicial+" | "+horarioFinal+" | "+statusDeAprovacao;
+    }
+
+    
+    
     public int getId() {
         return id;
     }

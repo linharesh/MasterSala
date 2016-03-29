@@ -1,11 +1,12 @@
+<%@page import="AppModel.Reserva"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="EnterpriseJavaBeans.SolicitacaoDeSalaBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
- if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("GerenteDeRecursos")) {
+    if (session.getAttribute("loginUsuario") == null || session.getAttribute("senhaUsuario") == null || !session.getAttribute("tipoDeUsuario").equals("GerenteDeRecursos")) {
         out.println("<script>document.location.href='index.jsp';</script>");
- }
+    }
 %>
 
 
@@ -51,7 +52,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">HOME</a></li>
-                         <li><a href="Logout">LOGOUT</a></li>
+                        <li><a href="../Logout">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -68,23 +69,47 @@
             </div><!-- container -->
         </div><!-- headerwrap -->
 
-        
+
         <div class="container">
             <div class="row centered">
+
+                <form action = ../AutorizadorDeReserva method="post">
+
+                    <h3> Autorizar Reserva:   </h3>                
+
+                    <br> <br>
+
+                    ID Reserva :  
+                    <input type="text" name="id_reserva">
+
+                    <br> <br>
+
+                    <input type="submit" value ="Autorizar" class ="btn btn-info" >
+
+
+                </form>
+
+
                 <br><br>
-                
                 <h3> Solicitacoes não autorizadas</h3>
                 <br><br>
-                
+
                 <%
-                ArrayList reservas;
-                SolicitacaoDeSalaBean solicitacaoDeSalaBean = new SolicitacaoDeSalaBean();
-                reservas = solicitacaoDeSalaBean.listarReservasNaoAprovadas();
-                out.println("breakpoint");
-                
+                    out.println("<b>ID Reserva | Prof. | Sala | Data | Horario Inicio | Horario Fim | Status </b>");
+                    out.println("<br><br>");
+                    ArrayList<Reserva> reservas;
+                    SolicitacaoDeSalaBean solicitacaoDeSalaBean = new SolicitacaoDeSalaBean();
+                    reservas = solicitacaoDeSalaBean.listarReservasNaoAprovadas();
+                    for (Reserva res : reservas) {
+                        if (!res.isAprovada()) {
+                            out.println(res.toString());
+                            out.println("<br><br>");
+                        }
+                    }
+
                 %>
-                
-                
+
+
                 <br><br>
             </div>
         </div><!-- container -->
