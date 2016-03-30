@@ -52,7 +52,7 @@
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
-				<h4>Quem somos nÃ³s ?</h4>
+				<h4>Quem somos nós ?</h4>
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->
@@ -91,60 +91,12 @@
 	<div id="dg">
 		<div class="container">
 			<div class="row centered">
-				<h4>Trabalho desenvolvido por alunos do curso de Sistemas de InformaÃ§Ã£o da Universidade Federal Fluminense, </h4>
-				<h4>para a disciplina de TÃ©cnicas de Projeto e ImplementaÃ§Ã£o de Sistemas II [TCC 00233]</h4>
-				<h4>Qualquer dÃºvida, entrar em contato com a equipe atravÃ©s do email linhares.h@gmail.com</h4>
+				<h4>Trabalho desenvolvido por alunos do curso de Sistemas de Informação da Universidade Federal Fluminense, </h4>
+				<h4>para a disciplina de Técnicas de Projeto e Implementação de Sistemas II [TCC 00233]</h4>
+				<h4>Qualquer dúvida, por favor entrar em contato com a equipe através do email linhares.h@gmail.com</h4>
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- DG -->
-
-
-
-	
-	<div id="r">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-					<br><br><br><br><br><br>
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><! -- r wrap -->
-	
-	
-
-
-
-	<!-- MODAL FOR CONTACT -->
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel">contact us</h4>
-	      </div>
-	      <div class="modal-body">
-		        <div class="row centered">
-		        	<p>We are available 24/7, so don't hesitate to contact us.</p>
-		        	<p>
-		        		Somestreet Ave, 987<br/>
-						London, UK.<br/>
-						+44 8948-4343<br/>
-						hi@blacktie.co
-		        	</p>
-		        	<div id="mapwrap">
-		<iframe height="300" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.es/maps?t=m&amp;ie=UTF8&amp;ll=52.752693,22.791016&amp;spn=67.34552,156.972656&amp;z=2&amp;output=embed"></iframe>
-					</div>	
-		        </div>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-danger" data-dismiss="modal">Save & Go</button>
-	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -8,3 +8,4 @@ Servlets\Logout.class
 AppModel\Reserva.class
 EnterpriseJavaBeans\SolicitacaoDeSalaBean.class
 Servlets\AutorizadorDeReserva.class
+.netbeans_automatic_build
