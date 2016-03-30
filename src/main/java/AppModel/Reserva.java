@@ -7,7 +7,7 @@ package AppModel;
 
 /**
  *
- * @author HenriqueLinhares
+ * @author Henrique Linhares , Bruno Oliveira, Raphael Quintanilha
  */
 public class Reserva {
 private int id;

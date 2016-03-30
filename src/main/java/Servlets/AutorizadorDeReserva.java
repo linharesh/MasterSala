@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author HenriqueLinhares
+ * @author Henrique Linhares , Bruno Oliveira, Raphael Quintanilha
  */
 @WebServlet(name = "AutorizadorDeReserva", urlPatterns = {"/AutorizadorDeReserva"})
 public class AutorizadorDeReserva extends HttpServlet {

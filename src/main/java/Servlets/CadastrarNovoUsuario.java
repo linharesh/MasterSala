@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author HenriqueLinhares
+ * @author Henrique Linhares , Bruno Oliveira, Raphael Quintanilha
  */
 @WebServlet(name = "CadastrarNovoUsuario", urlPatterns = {"/CadastrarNovoUsuario"})
 public class CadastrarNovoUsuario extends HttpServlet {

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author HenriqueLinhares
+ * @author Henrique Linhares , Bruno Oliveira, Raphael Quintanilha
  */
 @WebServlet(name = "SolicitarReservaSala", urlPatterns = {"/SolicitarReservaSala"})
 public class SolicitarReservaSala extends HttpServlet {

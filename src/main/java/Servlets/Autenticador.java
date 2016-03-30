@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author HenriqueLinhares
+ * @author Henrique Linhares , Bruno Oliveira, Raphael Quintanilha
  */
 @WebServlet(name = "Autenticador", urlPatterns = {"/Autenticador"})
 public class Autenticador extends HttpServlet {

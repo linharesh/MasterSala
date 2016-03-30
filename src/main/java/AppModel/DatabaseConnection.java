@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author HenriqueLinhares
+ * @author Henrique Linhares, Bruno Oliveira, Raphael Quintanilha
  */
 public class DatabaseConnection {
 

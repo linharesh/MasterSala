@@ -19,7 +19,7 @@ import javax.ejb.Stateless;
 
 /**
  *
- * @author HenriqueLinhares
+ * @author Henrique Linhares , Bruno Oliveira, Raphael Quintanilha
  */
 @Stateless
 public class SolicitacaoDeSalaBean {
