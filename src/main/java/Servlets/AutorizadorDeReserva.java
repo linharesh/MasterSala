@@ -43,7 +43,7 @@ public class AutorizadorDeReserva extends HttpServlet {
             int idSala = Integer.parseInt(request.getParameter("id_reserva"));
             solicitacaoDeSalaBean.autorizarReserva(idSala);
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/GerenteDeRecursos/gerenteDeRecursoLogado.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/GerenteDeRecursos/GerenciarSolicitacoesReserva.jsp");
             requestDispatcher.forward(request, response);
         }
     }

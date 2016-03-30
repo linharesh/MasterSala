@@ -49,7 +49,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="gerenteDeRecursoLogado.jsp">HOME</a></li>
-                        <li><a href="../Logout">LOGOUT</a></li>
+                        <li><a href="/MasterSala/Logout">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -71,8 +71,6 @@
             <div class="row centered">
                 <br><br>
                 <a href="/MasterSala/GerenteDeRecursos/formCadastrarNovoUsuario.jsp" class="btn btn-info" role="button">Tentar Novamente</a>	
-                <br><br>
-                <a href="/MasterSala/GerenteDeRecursos/gerenteDeRecursosLogado.jsp" class="btn btn-info" role="button">Voltar ao Menu de Gerente de Recursos</a>
                 <br><br>
             </div>
         </div><!-- container -->

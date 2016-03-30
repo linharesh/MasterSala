@@ -52,7 +52,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">HOME</a></li>
-                        <li><a href="../Logout">LOGOUT</a></li>
+                        <li><a href="/MasterSala/Logout">LOGOUT</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -73,14 +73,14 @@
         <div class="container">
             <div class="row centered">
 
-                <form action = ../AutorizadorDeReserva method="post">
+                <form action = /MasterSala/AutorizadorDeReserva method="post">
 
                     <h3> Autorizar Reserva:   </h3>                
 
                     <br> <br>
 
                     ID Reserva :  
-                    <input type="text" name="id_reserva">
+                    <input type="number" name="id_reserva">
 
                     <br> <br>
 

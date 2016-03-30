@@ -11,9 +11,9 @@ import java.sql.Statement;
  */
 public class DatabaseConnection {
 
-    public static final String DATABASE_URL = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5111604";
-    public static final String DATABASE_USERNAME = "sql5111604";
-    public static final String DATABASE_PASSWORD = "HHVMrYrI6A";
+    public static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/sql5111604";
+    public static final String DATABASE_USERNAME = "root";
+    public static final String DATABASE_PASSWORD = "password";
 
 
 
